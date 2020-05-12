@@ -1,0 +1,88 @@
+@import "~rfs/scss";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+.landing-page {
+  background-image: url("/images/MainBg.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  padding: 0 map-get($paddings, "page") 0 map-get($paddings, "page");
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
+  grid-template-areas:
+    "navbar   navbar"
+    "header   ."
+    "links    links";
+  align-items: center;
+
+  section.navbar {
+    grid-area: navbar;
+    justify-self: end;
+  }
+
+  header {
+    grid-area: header;
+    justify-self: center;
+  }
+
+  section.links {
+    grid-area: links;
+
+    .link {
+      font-size: 2.5rem;
+      margin: map-get($paddings, "links");
+      color: map-get($colors, "primary");
+    }
+
+    .link:hover {
+      cursor: pointer;
+      color: map-get($colors, "accent");
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+
+  h1,
+  h3 {
+    margin: 10px 0 0 0;
+  }
+
+  h1 {
+    @include font-size(60px);
+    font-weight: bold;
+  }
+
+  h3 {
+    @include font-size(30px);
+    font-weight: normal;
+  }
+}
+
+@include tablet {
+  .landing-page {
+    background-image: url("/images/MainBgMobile.svg");
+    background-size: contain;
+    background-position: bottom right;
+    padding: 0 map-get($paddings, "page") / 2 0 map-get($paddings, "page") / 2;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas:
+      "links   navbar"
+      "header   header"
+      ".    .";
+
+    section.links {
+      .link {
+        font-size: 1.5rem;
+        margin: map-get($paddings, "links") / 2;
+      }
+    }
+  }
+}

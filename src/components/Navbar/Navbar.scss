@@ -1,0 +1,85 @@
+@import "~rfs/scss";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+nav {
+  ul.nav-links {
+    display: inline-block;
+  }
+
+  ul.nav-links li {
+    @include font-size(18px);
+    display: inline-block;
+    padding: map-get($paddings, "navbar");
+    font-weight: 500;
+    color: map-get($colors, "primary");
+  }
+
+  ul.nav-links li:hover {
+    cursor: pointer;
+    color: map-get($colors, "accent");
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .hamburger-icon {
+    display: none;
+    position: relative;
+    z-index: 1000;
+    font-size: 1.5rem;
+    padding: 15px;
+    background-color: map-get($colors, "accent");
+    color: map-get($colors, "background");
+    border-radius: 50%;
+  }
+
+  .hamburger-icon:hover {
+    cursor: pointer;
+  }
+}
+
+@include tablet {
+  nav {
+    ul.nav-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        map-get($colors, "accent"),
+        map-get($colors, "accent2")
+      );
+      text-align: center;
+      clip-path: circle(20px at 100% -20%);
+      -webkit-clip-path: circle(20px at 100% -20%);
+      transition: all 0.5s ease-out;
+    }
+
+    ul.nav-links.active {
+      clip-path: circle(1600px at 90% -20%);
+      -webkit-clip-path: circle(1600px at 90% -20%);
+    }
+
+    ul.nav-links li {
+      display: block;
+      position: relative;
+      color: map-get($colors, "background");
+      top: 40%;
+    }
+
+    ul.nav-links li:hover {
+      color: map-get($colors, "background");
+    }
+
+    .hamburger-icon.hidden {
+      display: none;
+    }
+
+    .hamburger-icon.active {
+      display: block;
+    }
+  }
+}
