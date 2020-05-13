@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-scroll";
 import { FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
 import "./LandingPage.scss";
@@ -8,7 +9,7 @@ import Navbar from "../Navbar/Navbar";
 class LandingPage extends React.Component {
   render() {
     return (
-      <div className="landing-page">
+      <div className="landing-page" name="about-section">
         <section className="navbar">
           <Navbar />
         </section>
@@ -17,7 +18,9 @@ class LandingPage extends React.Component {
           <h3>Maciej Zarzeczny</h3>
           <h1>Full stack developer</h1>
           <h1>Mobile developer</h1>
-          <button>Learn more</button>
+          <Link to="skills-section" smooth={true} offset={50} duration={500}>
+            <div className="button">Learn more</div>
+          </Link>
         </header>
 
         <section className="links">

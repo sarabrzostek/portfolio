@@ -3,14 +3,14 @@
 @import "../../assets/styles/mixins";
 
 .landing-page {
-  background-image: url("/images/MainBg.svg");
+  background-image: url("/images/landing_page_bg.svg");
   background-repeat: no-repeat;
   background-position: top right;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 map-get($paddings, "page") 0 map-get($paddings, "page");
 
   display: grid;
@@ -65,9 +65,13 @@
   }
 }
 
+/*----- MOBILE VERSION -----*/
 @include tablet {
   .landing-page {
     background-image: url("/images/MainBgMobile.svg");
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
     background-size: contain;
     background-position: bottom right;
     padding: 0 map-get($paddings, "page") / 2 0 map-get($paddings, "page") / 2;

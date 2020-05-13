@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-scroll";
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import "./Navbar.scss";
 
@@ -7,22 +8,9 @@ class Navbar extends React.Component {
   state = {
     mobileMenuActive: false,
   };
-  // handleMobileMenu = () => {
-  //   var menu = document.getElementsByClassName("nav-links")[0];
-  //   menu.classList.toggle("active");
-  // };
-  showMobileMenu = () => {
-    var menu = document.getElementsByClassName("nav-links")[0];
-    menu.classList.add("active");
+  toggleMobileMenu = () => {
     this.setState({
-      mobileMenuActive: true,
-    });
-  };
-  hideMobileMenu = () => {
-    var menu = document.getElementsByClassName("nav-links")[0];
-    menu.classList.remove("active");
-    this.setState({
-      mobileMenuActive: false,
+      mobileMenuActive: !this.state.mobileMenuActive,
     });
   };
   render() {
@@ -31,15 +19,37 @@ class Navbar extends React.Component {
 
     return (
       <nav>
-        <FaBars className={"hamburger-icon " + barsClassName} onClick={this.showMobileMenu} />
+        <FaBars className={"hamburger-icon " + barsClassName} onClick={this.toggleMobileMenu} />
         <FaTimesCircle
           className={"hamburger-icon " + closeClassName}
-          onClick={this.hideMobileMenu}
+          onClick={this.toggleMobileMenu}
         />
 
-        <ul className="nav-links">
-          <li>ABOUT ME</li>
-          <li>SKILLS</li>
+        <ul className={"nav-links " + closeClassName}>
+          <li>
+            <Link
+              to="about-section"
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={this.toggleMobileMenu}
+            >
+              ABOUT ME
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="skills-section"
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={this.toggleMobileMenu}
+            >
+              SKILLS
+            </Link>
+          </li>
+
           <li>PROJECTS</li>
           <li>CONTACT</li>
         </ul>

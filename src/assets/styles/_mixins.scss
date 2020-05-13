@@ -3,8 +3,10 @@
 
 @mixin button {
   @include font-size(16px);
+  font-weight: 400;
   padding: 15px 25px 15px 25px;
   margin-top: 20px;
+  width: fit-content;
   color: map-get($colors, "accent");
   border: 2px solid map-get($colors, "accent");
   background-color: transparent;
@@ -14,11 +16,20 @@
     transform: scale(1.1);
     transition: all 0.2s ease-in-out;
   }
+  &:focus {
+    outline: 0;
+  }
 }
 
 /*----- RESPONSIVE BREAKPOINTS ----- */
 @mixin tablet {
   @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
     @content;
   }
 }
