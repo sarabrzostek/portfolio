@@ -1,5 +1,6 @@
 @import "~rfs/scss";
 @import "./variables";
+@import "./themes";
 
 @mixin button {
   @include font-size(16px);
@@ -7,10 +8,14 @@
   padding: 15px 25px 15px 25px;
   margin-top: 20px;
   width: fit-content;
-  color: map-get($colors, "accent");
-  border: 2px solid map-get($colors, "accent");
   background-color: transparent;
   border-radius: 5px;
+
+  @include theme() {
+    color: themed("buttonColor");
+    border: 2px solid themed("buttonColor");
+  }
+
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -19,6 +24,31 @@
   &:focus {
     outline: 0;
   }
+}
+
+/*----- THEME MIXIN ----- */
+@mixin theme() {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
 }
 
 /*----- RESPONSIVE BREAKPOINTS ----- */

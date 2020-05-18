@@ -1,0 +1,47 @@
+@import "~rfs/scss";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+.footer {
+  section.links {
+    text-align: center;
+
+    .link {
+      @include theme() {
+        color: themed("textColor");
+      }
+
+      font-size: 2.5rem;
+      margin: 0 map-get($paddings, "links") 0 map-get($paddings, "links");
+      color: map-get($colors, "primary");
+    }
+
+    .link:hover {
+      cursor: pointer;
+      color: map-get($colors, "accent");
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+
+  p {
+    @include font-size(18px);
+    @include theme() {
+      color: themed("textColor");
+    }
+
+    text-align: center;
+    padding: 2% 0 2% 0;
+  }
+}
+
+@include tablet {
+  .footer {
+    section.links {
+      .link {
+        font-size: 1.5rem;
+        margin: map-get($paddings, "links") / 2;
+      }
+    }
+  }
+}

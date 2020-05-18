@@ -3,7 +3,7 @@
 @import "../../assets/styles/mixins";
 
 .landing-page {
-  background-image: url("/images/landing_page_bg.svg");
+  background-image: url("/images/bg/landing_page_bg.svg");
   background-repeat: no-repeat;
   background-position: top right;
   -webkit-background-size: cover;
@@ -17,9 +17,9 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 5fr 0.5fr;
   grid-template-areas:
-    "navbar   navbar"
-    "header   ."
-    "links    links";
+    "theme-toggle   navbar"
+    "header         illustration"
+    "links          links";
   align-items: center;
 
   section.navbar {
@@ -38,20 +38,32 @@
     .link {
       font-size: 2.5rem;
       margin: map-get($paddings, "links");
-      color: map-get($colors, "primary");
-    }
 
-    .link:hover {
-      cursor: pointer;
-      color: map-get($colors, "accent");
-      transition: all 0.2s ease-in-out;
-      transform: scale(1.1);
+      @include theme() {
+        color: themed("textColor");
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: map-get($colors, "accent");
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+      }
     }
+  }
+
+  .toggle-parent {
+    grid-area: theme-toggle;
+    padding-bottom: 2%;
   }
 
   h1,
   h3 {
     margin: 10px 0 0 0;
+
+    @include theme() {
+      color: themed("textColor");
+    }
   }
 
   h1 {
@@ -65,10 +77,129 @@
   }
 }
 
+/*----- ILLUSTRATION -----*/
+#landing-illustration {
+  grid-area: illustration;
+  justify-self: end;
+  width: 80%;
+
+  #left-leaf,
+  #right-leaf {
+    display: none;
+  }
+
+  #body {
+    animation: body-anim;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+  }
+
+  #left-arm {
+    animation: arms-anim;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+    transform-origin: top;
+    transform-box: fill-box;
+  }
+
+  #right-arm {
+    animation: arms-anim;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: top;
+    transform-box: fill-box;
+  }
+
+  #torso {
+    animation: torso-anim;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  #head {
+    animation: head-anim;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  #tip {
+    animation: tip-anim;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    transform-box: fill-box;
+  }
+}
+
+@keyframes body-anim {
+  0% {
+    transform: rotateZ(-1deg);
+  }
+  50% {
+    transform: rotateZ(1deg);
+  }
+  100% {
+    transform: rotateZ(-1deg);
+  }
+}
+
+@keyframes head-anim {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes torso-anim {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(15deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes arms-anim {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(25deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes tip-anim {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
 /*----- MOBILE VERSION -----*/
 @include tablet {
   .landing-page {
-    background-image: url("/images/MainBgMobile.svg");
+    background-image: url("/images/bg/landing_page_mobile.svg");
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -87,6 +218,14 @@
         font-size: 1.5rem;
         margin: map-get($paddings, "links") / 2;
       }
+    }
+
+    #landing-illustration {
+      display: none;
+    }
+
+    .toggle-parent {
+      display: none;
     }
   }
 }

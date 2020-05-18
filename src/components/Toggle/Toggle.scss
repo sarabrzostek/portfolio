@@ -1,0 +1,64 @@
+@import "../../assets/styles/variables";
+
+.toggle-parent {
+  display: flex;
+  align-items: center;
+
+  .toggle-icon {
+    color: #fcfcfc;
+    font-size: 1.5rem;
+    padding: 2.5% 2% 0 2%;
+  }
+
+  .toggle-icon:last-child {
+    color: #ccc;
+  }
+
+  .toggle-icon.active {
+    color: map-get($colors, "accent");
+  }
+}
+
+.toggle {
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 80px;
+    height: 40px;
+    background: #ccc;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+
+  input:checked + label {
+    background: map-get($colors, "accent");
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 35px;
+  }
+}

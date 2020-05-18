@@ -28,11 +28,15 @@ nav {
     z-index: 2;
     font-size: 1.5rem;
     padding: 15px;
-    background-color: map-get($colors, "background");
-    color: map-get($colors, "primary");
     border-radius: 50%;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
       0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s ease-in-out;
+
+    @include theme() {
+      background-color: themed("cardColor");
+      color: themed("textColor");
+    }
   }
 
   .hamburger-icon:hover {
@@ -40,7 +44,73 @@ nav {
   }
 }
 
+@mixin responsiveNavbar {
+  ul.nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(map-get($colors, "accent"), map-get($colors, "accent2"));
+    text-align: center;
+    clip-path: circle(20px at 100% -20%);
+    -webkit-clip-path: circle(20px at 100% -20%);
+    transition: all 0.5s ease-out;
+  }
+
+  ul.nav-links.active {
+    clip-path: circle(100vh * 2 at 90% -20%);
+    -webkit-clip-path: circle(100vh * 2 at 90% -20%);
+  }
+
+  ul.nav-links li {
+    display: block;
+    position: relative;
+    color: map-get($colors, "background");
+    top: 40%;
+  }
+
+  ul.nav-links li:hover {
+    color: map-get($colors, "background");
+  }
+
+  .hamburger-icon.active {
+    display: block;
+  }
+
+  @keyframes hamburgerAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hamburger-icon.active.animate {
+    animation-name: hamburgerAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+}
+
 /*----- RESPONSIVE -----*/
+nav.mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 40px;
+  z-index: 2;
+
+  @include responsiveNavbar();
+}
+
 @include tablet {
   nav {
     position: fixed;
@@ -49,39 +119,6 @@ nav {
     margin: 40px;
     z-index: 2;
 
-    ul.nav-links {
-      position: fixed;
-      top: 0;
-      left: 0;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(map-get($colors, "accent"), map-get($colors, "accent2"));
-      text-align: center;
-      clip-path: circle(20px at 100% -20%);
-      -webkit-clip-path: circle(20px at 100% -20%);
-      transition: all 0.5s ease-out;
-    }
-
-    ul.nav-links.active {
-      clip-path: circle(1600px at 90% -20%);
-      -webkit-clip-path: circle(1600px at 90% -20%);
-    }
-
-    ul.nav-links li {
-      display: block;
-      position: relative;
-      color: map-get($colors, "background");
-      top: 40%;
-    }
-
-    ul.nav-links li:hover {
-      color: map-get($colors, "background");
-    }
-
-    .hamburger-icon.active {
-      display: block;
-    }
+    @include responsiveNavbar();
   }
 }

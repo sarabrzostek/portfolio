@@ -8,6 +8,16 @@ html {
   margin: 0;
 }
 
+.App {
+  @include theme() {
+    background-color: themed("backgroundColor");
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
 .button {
   @include button;
 }

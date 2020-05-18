@@ -1,3 +1,104 @@
+@import "~rfs/scss";
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
 .projects-page {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0 15% 0 15%;
+
+  .title {
+    @include font-size(40px);
+    @include theme() {
+      color: themed("textColor");
+    }
+    font-weight: 500;
+    text-align: center;
+    padding: 10% 0 10% 0;
+  }
+
+  .button {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+section.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  gap: 20px;
+  justify-items: stretch;
+
+  .project-card {
+    @include theme() {
+      background-color: themed("cardColor");
+      color: themed("textColor");
+    }
+
+    position: relative;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+      0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    .project-card-overflow {
+      background: linear-gradient(map-get($colors, "accent"), map-get($colors, "accent2"));
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+      clip-path: circle(0% at 0% 0%);
+      transition: clip-path 0.5s ease-in-out;
+
+      .button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -76px;
+        margin-top: -22px;
+        color: white;
+        border-color: white;
+      }
+    }
+
+    .project-image {
+      background-color: #fff;
+      width: 50%;
+      padding: 40px;
+    }
+
+    .details {
+      padding: 10px 20px 10px 20px;
+    }
+
+    .project-name {
+      @include font-size(25px);
+      margin: 0 0 5% 0;
+      font-weight: 400;
+    }
+    .technology-icon {
+      width: 10%;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .project-card-overflow {
+        clip-path: circle(75%);
+      }
+    }
+  }
+}
+
+@include tablet {
+  section.projects {
+    display: block;
+
+    .project-card {
+      margin-bottom: 5%;
+    }
+  }
 }
