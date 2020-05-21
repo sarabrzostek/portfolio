@@ -5,6 +5,16 @@ import { FaChevronDown } from "react-icons/fa";
 import HtmlIcon from "../../assets/icons/html5_icon.svg";
 import ReduxIcon from "../../assets/icons/redux_logo.svg";
 import JavascriptIcon from "../../assets/icons/javascript-1.svg";
+import ReactIcon from "../../assets/icons/react-brands.svg";
+import CssIcon from "../../assets/icons/css3.svg";
+import LaravelIcon from "../../assets/icons/laravel-brands.svg";
+import MySqlIcon from "../../assets/icons/mysql.svg";
+import MaterializeIcon from "../../assets/icons/materialize.svg";
+import FlutterIcon from "../../assets/icons/flutter.svg";
+import FirebaseIcon from "../../assets/icons/firebase.svg";
+import GitIcon from "../../assets/icons/git.svg";
+import XdIcon from "../../assets/icons/xd.svg";
+import PhotoshopIcon from "../../assets/icons/photoshop.svg";
 import { Link } from "react-scroll";
 
 class SkillsPage extends React.Component {
@@ -21,25 +31,23 @@ class SkillsPage extends React.Component {
       "Laravel",
       "MySQL",
       "Materialize css",
-      "Bootstrap 4",
     ],
     webIcons: [
       HtmlIcon,
-      HtmlIcon,
+      CssIcon,
       JavascriptIcon,
-      HtmlIcon,
+      ReactIcon,
       ReduxIcon,
-      HtmlIcon,
-      HtmlIcon,
-      HtmlIcon,
-      HtmlIcon,
+      LaravelIcon,
+      MySqlIcon,
+      MaterializeIcon,
     ],
 
     mobileSkills: ["Flutter", "Firebase"],
-    mobileIcons: [HtmlIcon, HtmlIcon],
+    mobileIcons: [FlutterIcon, FirebaseIcon],
 
-    otherSkills: ["Git", "Terminal", "Adobe XD", "Adobe Photoshop"],
-    otherIcons: [HtmlIcon, HtmlIcon, HtmlIcon, HtmlIcon],
+    otherSkills: ["Git", "Adobe XD", "Adobe Photoshop"],
+    otherIcons: [GitIcon, XdIcon, PhotoshopIcon],
   };
   handleCardClick = (el) => {
     switch (el.currentTarget.id) {

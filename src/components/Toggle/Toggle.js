@@ -13,7 +13,7 @@ function Toggle(props) {
       <FaSun className={"toggle-icon " + lightThemeClass} />
 
       <div className="toggle">
-        <input type="checkbox" id="switch" onChange={handleThemeChange} />
+        <input type="checkbox" id="switch" onChange={handleThemeChange} checked={darkTheme} />
         <label htmlFor="switch">Toggle</label>
       </div>
 

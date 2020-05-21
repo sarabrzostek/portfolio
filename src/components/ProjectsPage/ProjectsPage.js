@@ -2,6 +2,7 @@ import React from "react";
 
 import "./ProjectsPage.scss";
 import HtmlIcon from "../../assets/icons/html5_icon.svg";
+import GyminoImage from "../../assets/images/gymino_app.png";
 
 class ProjectsPage extends React.Component {
   state = {
@@ -10,19 +11,19 @@ class ProjectsPage extends React.Component {
         name: "Gymino",
         icons: [HtmlIcon, HtmlIcon],
         codeUrl: "https://github.com/maciekz1996/sqilly",
-        image: "/images/gymino_app.png",
+        image: GyminoImage,
       },
       {
         name: "Gymino dashboard",
         icons: [HtmlIcon, HtmlIcon],
         codeUrl: "https://github.com/maciekz1996/sqilly",
-        image: "/images/gymino_app.png",
+        image: GyminoImage,
       },
       {
         name: "Scudetto",
         icons: [HtmlIcon, HtmlIcon],
         codeUrl: "https://github.com/maciekz1996/sqilly",
-        image: "/images/gymino_app.png",
+        image: GyminoImage,
       },
     ],
   };

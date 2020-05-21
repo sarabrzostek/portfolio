@@ -3,7 +3,7 @@
 @import "../../assets/styles/mixins";
 
 .contact-page {
-  background-image: url("/images/bg/contact_bg.svg");
+  background-image: url("../../assets/images/bg/contact_bg.svg");
   background-repeat: no-repeat;
   background-position: top right;
   -webkit-background-size: cover;
@@ -12,7 +12,7 @@
   background-size: cover;
   min-height: 100vh;
   margin: 10% 0 0 0;
-  padding: 0 10% 0 10%;
+  padding: 0 0 0 10%;
 
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -63,6 +63,22 @@ section.contact-info {
       margin: 0;
     }
   }
+
+  .alert {
+    padding: 20px;
+    color: #fcfcfc;
+    opacity: 0.8;
+    width: calc(80% - 40px);
+    border-radius: 5px;
+
+    &.error {
+      background-color: map-get($colors, "error");
+    }
+
+    &.success {
+      background-color: map-get($colors, "success");
+    }
+  }
 }
 
 form {
@@ -70,7 +86,8 @@ form {
 
   input,
   label,
-  button {
+  button,
+  textarea {
     display: block;
   }
 
@@ -80,6 +97,10 @@ form {
       color: themed("textColor");
     }
     margin-bottom: 5px;
+
+    &.error {
+      color: map-get($colors, "error");
+    }
   }
 
   label:not(:first-child) {
@@ -99,14 +120,23 @@ form {
     border: 1px solid map-get($colors, "primary");
     width: calc(80% - 40px);
     transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+
+      @include theme() {
+        border: 1px solid themed("textColor");
+      }
+    }
+
+    &.error {
+      border-color: map-get($colors, "error");
+    }
   }
 
-  input:focus {
-    outline: none;
-
-    @include theme() {
-      border: 1px solid themed("textColor");
-    }
+  .error-msg {
+    @include font-size(14px);
+    color: map-get($colors, "error");
   }
 
   textarea {
@@ -133,17 +163,25 @@ form {
       border: 1px solid themed("textColor");
     }
   }
+
+  .sendButton {
+    .preloader {
+      margin-left: 10px;
+      color: map-get($colors, "accent");
+    }
+  }
 }
 
 @include tablet {
   .contact-page {
-    background-image: url("/images/bg/mobile_contact_bg.svg");
+    background-image: url("../../assets/images/bg/mobile_contact_bg.svg");
     background-position: bottom right;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
     display: block;
+    padding-right: 10%;
 
     .title {
       text-align: center;

@@ -8,12 +8,29 @@ import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
   state = {
-    darkTheme: false,
+    darkTheme: localStorage.getItem("darkTheme") === "true",
   };
+  componentDidMount() {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches &&
+      !this.state.darkTheme
+    ) {
+      console.log("dark");
+      this.setState({ darkTheme: true });
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: light)").matches &&
+      this.state.darkTheme
+    ) {
+      this.setState({ darkTheme: false });
+    }
+  }
   handleThemeChange = () => {
     this.setState({
       darkTheme: !this.state.darkTheme,
     });
+    localStorage.setItem("darkTheme", !this.state.darkTheme);
   };
   render() {
     const theme = this.state.darkTheme ? "theme-dark" : "theme-light";

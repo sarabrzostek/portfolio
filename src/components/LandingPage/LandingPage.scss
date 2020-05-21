@@ -3,7 +3,7 @@
 @import "../../assets/styles/mixins";
 
 .landing-page {
-  background-image: url("/images/bg/landing_page_bg.svg");
+  background-image: url("../../assets/images/bg/landing_page_bg.svg");
   background-repeat: no-repeat;
   background-position: top right;
   -webkit-background-size: cover;
@@ -25,6 +25,7 @@
   section.navbar {
     grid-area: navbar;
     justify-self: end;
+    align-self: center;
   }
 
   header {
@@ -199,7 +200,7 @@
 /*----- MOBILE VERSION -----*/
 @include tablet {
   .landing-page {
-    background-image: url("/images/bg/landing_page_mobile.svg");
+    background-image: url("../../assets/images/bg/landing_page_mobile.svg");
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -209,15 +210,12 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 5fr 1fr;
     grid-template-areas:
-      "links   navbar"
+      "theme-toggle   navbar"
       "header   header"
       ".    .";
 
     section.links {
-      .link {
-        font-size: 1.5rem;
-        margin: map-get($paddings, "links") / 2;
-      }
+      display: none;
     }
 
     #landing-illustration {
@@ -225,7 +223,7 @@
     }
 
     .toggle-parent {
-      display: none;
+      padding-bottom: 7%;
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
 
 .toggle-parent {
   display: flex;
@@ -60,5 +61,30 @@
 
   label:active:after {
     width: 35px;
+  }
+}
+
+@include tablet {
+  .toggle {
+    label {
+      width: 60px;
+      height: 30px;
+    }
+
+    label:after {
+      width: 20px;
+      height: 20px;
+    }
+
+    label:active:after {
+      width: 25px;
+    }
+  }
+
+  .toggle-parent {
+    .toggle-icon {
+      font-size: 1rem;
+      padding: 6% 2% 0 2%;
+    }
   }
 }
