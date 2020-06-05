@@ -8,7 +8,7 @@
   .toggle-icon {
     color: #fcfcfc;
     font-size: 1.5rem;
-    padding: 2.5% 2% 0 2%;
+    padding: 0 4% 0 4%;
   }
 
   .toggle-icon:last-child {
@@ -24,7 +24,7 @@
   input[type="checkbox"] {
     height: 0;
     width: 0;
-    visibility: hidden;
+    display: none;
   }
 
   label {
@@ -84,7 +84,7 @@
   .toggle-parent {
     .toggle-icon {
       font-size: 1rem;
-      padding: 6% 2% 0 2%;
+      // padding: 6% 2% 0 2%;
     }
   }
 }

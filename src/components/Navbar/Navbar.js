@@ -3,6 +3,7 @@ import React from "react";
 import "./Navbar.scss";
 import { Link } from "react-scroll";
 import { FaBars, FaTimesCircle, FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
+import Toggle from "../Toggle/Toggle";
 
 class Navbar extends React.Component {
   state = {
@@ -48,14 +49,20 @@ class Navbar extends React.Component {
     });
   };
   render() {
+    const { handleThemeChange, darkTheme } = this.props;
+
     const barsClassName = this.state.mobileMenuActive ? "hidden" : "active";
     const closeClassName = this.state.mobileMenuActive ? "active" : "hidden";
-    const minifiedClass = this.state.showMinifiedMenu ? "mobile" : "hidden";
+    const mobileClass = this.state.showMinifiedMenu ? "mobile" : "";
 
     return (
-      <nav className={minifiedClass}>
+      <nav className={mobileClass}>
+        <Toggle handleThemeChange={handleThemeChange} darkTheme={darkTheme} />
+
         <FaBars
-          className={"hamburger-icon " + barsClassName + " " + this.state.hamburgerClass}
+          className={
+            "hamburger-icon " + barsClassName + " " + this.state.hamburgerClass + " " + mobileClass
+          }
           onClick={this.showMobileMenu}
         />
         <FaTimesCircle

@@ -10,22 +10,21 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0 map-get($paddings, "page") 0 map-get($paddings, "page");
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.5fr 5fr 0.5fr;
   grid-template-areas:
-    "theme-toggle   navbar"
+    "navbar         navbar"
     "header         illustration"
     "links          links";
   align-items: center;
 
   section.navbar {
     grid-area: navbar;
-    justify-self: end;
-    align-self: center;
+    justify-self: stretch;
   }
 
   header {
@@ -37,8 +36,8 @@
     grid-area: links;
 
     .link {
-      font-size: 2.5rem;
-      margin: map-get($paddings, "links");
+      font-size: 4vmin;
+      margin: map-get($paddings, "navbar");
 
       @include theme() {
         color: themed("textColor");
@@ -53,11 +52,6 @@
     }
   }
 
-  .toggle-parent {
-    grid-area: theme-toggle;
-    padding-bottom: 2%;
-  }
-
   h1,
   h3 {
     margin: 10px 0 0 0;
@@ -68,12 +62,14 @@
   }
 
   h1 {
-    @include font-size(60px);
+    // @include font-size(50px);
+    font-size: 6vmin;
     font-weight: bold;
   }
 
   h3 {
-    @include font-size(30px);
+    // @include font-size(30px);
+    font-size: 3vmin;
     font-weight: normal;
   }
 }
@@ -83,6 +79,7 @@
   grid-area: illustration;
   justify-self: end;
   width: 80%;
+  height: 50%;
 
   #left-leaf,
   #right-leaf {
@@ -210,7 +207,7 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 5fr 1fr;
     grid-template-areas:
-      "theme-toggle   navbar"
+      "navbar   navbar"
       "header   header"
       ".    .";
 
@@ -220,10 +217,6 @@
 
     #landing-illustration {
       display: none;
-    }
-
-    .toggle-parent {
-      padding-bottom: 7%;
     }
   }
 }

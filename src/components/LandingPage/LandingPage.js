@@ -5,7 +5,6 @@ import { FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
 import "./LandingPage.scss";
 import Navbar from "../Navbar/Navbar";
-import Toggle from "../Toggle/Toggle";
 
 class LandingPage extends React.Component {
   render() {
@@ -14,7 +13,7 @@ class LandingPage extends React.Component {
     return (
       <div className="landing-page" name="about-section">
         <section className="navbar">
-          <Navbar />
+          <Navbar handleThemeChange={handleThemeChange} darkTheme={darkTheme} />
         </section>
 
         <header>
@@ -25,8 +24,6 @@ class LandingPage extends React.Component {
             <div className="button">Learn more</div>
           </Link>
         </header>
-
-        <Toggle handleThemeChange={handleThemeChange} darkTheme={darkTheme} />
 
         <svg
           id="landing-illustration"
