@@ -62,15 +62,21 @@
   }
 
   h1 {
-    // @include font-size(50px);
     font-size: 6vmin;
     font-weight: bold;
+
+    @include mobile {
+      font-size: 6.5vmin;
+    }
   }
 
   h3 {
-    // @include font-size(30px);
     font-size: 3vmin;
     font-weight: normal;
+
+    @include mobile {
+      font-size: 3.5vmin;
+    }
   }
 }
 

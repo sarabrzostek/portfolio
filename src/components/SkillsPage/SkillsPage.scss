@@ -22,7 +22,8 @@
     ".                button";
 
   .title {
-    @include font-size(40px);
+    font-size: 3vmin;
+
     @include theme() {
       color: themed("textColor");
     }
@@ -30,6 +31,10 @@
     grid-area: title;
     justify-self: center;
     align-self: end;
+
+    @include mobile {
+      font-size: 6vmin;
+    }
   }
 }
 
@@ -164,24 +169,28 @@
     }
 
     .skill-description {
-      @include font-size(20px);
+      font-size: 2vmin;
       padding-left: 20px;
-    }
-  }
 
-  .card:hover {
-    transform: scale(1.01);
+      @include mobile {
+        font-size: 4vmin;
+      }
+    }
   }
 }
 
 .card-header {
   padding-bottom: 20px;
 
-  h3 {
-    @include font-size(25px);
+  h2 {
+    font-size: 3vmin;
     margin: 0;
     font-weight: normal;
     text-align: center;
+
+    @include mobile {
+      font-size: 5vmin;
+    }
   }
 
   .more-icon {

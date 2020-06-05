@@ -113,7 +113,7 @@ class SkillsPage extends React.Component {
         <div className="cards">
           <div id="web" className={"card " + this.state.webCard} onClick={this.handleCardClick}>
             <div className="card-header">
-              <h3>Web development</h3>
+              <h2>Web development</h2>
               <FaChevronDown className="more-icon" />
             </div>
             <div className="card-content">{webSkills}</div>
@@ -125,7 +125,7 @@ class SkillsPage extends React.Component {
             onClick={this.handleCardClick}
           >
             <div className="card-header">
-              <h3>Mobile development</h3>
+              <h2>Mobile development</h2>
               <FaChevronDown className="more-icon" />
             </div>
             <div className="card-content">{mobileSkills}</div>
@@ -133,7 +133,7 @@ class SkillsPage extends React.Component {
 
           <div id="other" className={"card " + this.state.otherCard} onClick={this.handleCardClick}>
             <div className="card-header">
-              <h3>Other</h3>
+              <h2>Other</h2>
               <FaChevronDown className="more-icon" />
             </div>
             <div className="card-content">{otherSkills}</div>

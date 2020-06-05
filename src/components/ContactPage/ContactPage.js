@@ -19,6 +19,9 @@ class ContactPage extends React.Component {
     isLoading: false,
   };
   validateForm = (errors) => {
+    const { from_name, reply_to, message_html } = this.state;
+    if (from_name === "" || reply_to === "" || message_html === "") return false;
+
     let valid = true;
     Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
 
@@ -117,21 +120,23 @@ class ContactPage extends React.Component {
             <input
               type="text"
               name="from_name"
+              id="name"
               onChange={this.handleInputChange}
               value={this.state.from_name}
             />
             {errors.name.length > 0 && <span className="error-msg">{errors.name}</span>}
 
-            <label htmlFor="reply_to">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="reply_to"
+              id="email"
               onChange={this.handleInputChange}
               value={this.state.reply_to}
             />
             {errors.email.length > 0 && <span className="error-msg">{errors.email}</span>}
 
-            <label htmlFor="message_html">Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               name="message_html"
               id="message"

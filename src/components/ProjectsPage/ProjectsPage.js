@@ -43,12 +43,12 @@ class ProjectsPage extends React.Component {
         <div className="project-card" key={i}>
           <img src={project.image} className="project-image" alt={project.name} />
           <div className="details">
-            <h3 className="project-name">{project.name}</h3>
+            <h2 className="project-name">{project.name}</h2>
             {icons}
           </div>
           <div className="project-card-overflow">
             <a href={project.codeUrl} className="button" target="_blank" rel="noopener noreferrer">
-              Source code
+              See details
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@ class ProjectsPage extends React.Component {
       <div className="projects-page" name="projects-section">
         <h1 className="title">Recent projects</h1>
         <section className="projects">{projects}</section>
-        <div className="button">See all</div>
+        {this.state.projects.length > 3 && <div className="button">See all</div>}
       </div>
     );
   }

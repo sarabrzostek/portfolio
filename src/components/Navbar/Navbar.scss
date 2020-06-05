@@ -75,6 +75,7 @@ nav {
     padding: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     background: linear-gradient(map-get($colors, "accent"), map-get($colors, "accent2"));
     text-align: center;
     clip-path: circle(20px at 100% -20%);
@@ -83,14 +84,14 @@ nav {
   }
 
   ul.nav-links.active {
-    clip-path: circle(200vmax at 90% -20%);
-    -webkit-clip-path: circle(200vmax at 90% -20%);
+    clip-path: circle(150vmax at 90% -20%);
+    -webkit-clip-path: circle(150vmax at 90% -20%);
   }
 
   ul.nav-links li {
     display: block;
     position: relative;
-    top: 35%;
+    top: 35vh;
   }
 
   ul.nav-links li a {

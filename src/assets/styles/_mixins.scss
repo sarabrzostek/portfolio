@@ -5,10 +5,12 @@
 @mixin button {
   font-size: 2vmin;
   font-weight: 400;
-  padding: 2% 4% 2% 4%;
+  padding: 1rem 2rem;
   margin-top: 20px;
   min-width: 100px;
   text-align: center;
+  width: -moz-min-content;
+  width: -webkit-min-content;
   width: fit-content;
   background-color: transparent;
   border-radius: 5px;
