@@ -131,6 +131,7 @@ form {
       color: themed("textColor");
     }
 
+    font: inherit;
     font-weight: 400;
     padding: 20px;
     border-radius: 5px;
@@ -179,6 +180,7 @@ form {
     height: 7rem;
     resize: none;
     transition: all 0.2s ease-in-out;
+    font: inherit;
 
     @include mobile {
       font-size: 4vmin;
