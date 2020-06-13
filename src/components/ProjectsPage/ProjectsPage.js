@@ -37,7 +37,7 @@ class ProjectsPage extends React.Component {
       {
         name: "Scudetto store",
         icons: [LaravelIcon, VueIcon],
-        codeUrl: "https://github.com/maciekz1996/sqilly",
+        codeUrl: "https://github.com/maciekz1996/scudetto",
         image: ScudettoImage,
       },
     ],
