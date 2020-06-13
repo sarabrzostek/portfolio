@@ -30,6 +30,7 @@
   header {
     grid-area: header;
     justify-self: center;
+    margin-bottom: 10vh;
   }
 
   section.links {
@@ -66,7 +67,7 @@
     font-weight: bold;
 
     @include mobile {
-      font-size: 6.5vmin;
+      font-size: 7vmin;
     }
   }
 
@@ -75,7 +76,7 @@
     font-weight: normal;
 
     @include mobile {
-      font-size: 3.5vmin;
+      font-size: 4vmin;
     }
   }
 }

@@ -6,8 +6,8 @@
   align-items: center;
 
   .toggle-icon {
+    font-size: 1vw;
     color: #fcfcfc;
-    font-size: 1.5rem;
     padding: 0 4% 0 4%;
   }
 
@@ -64,27 +64,28 @@
   }
 }
 
-@include tablet {
+@include mobile {
   .toggle {
     label {
-      width: 60px;
-      height: 30px;
+      width: 15vw;
+      height: 7.5vw;
     }
 
     label:after {
-      width: 20px;
-      height: 20px;
+      width: 5vw;
+      height: 5vw;
+      top: 1.3vw;
+      left: 1.3vw;
     }
 
     label:active:after {
-      width: 25px;
+      width: 5.5vw;
     }
   }
 
   .toggle-parent {
     .toggle-icon {
-      font-size: 1rem;
-      // padding: 6% 2% 0 2%;
+      font-size: 5vw;
     }
   }
 }
