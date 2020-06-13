@@ -70,8 +70,7 @@ section.projects {
     }
 
     .project-image {
-      background-color: #fff;
-      width: 50%;
+      width: 70%;
       padding: 40px;
     }
 
@@ -89,7 +88,12 @@ section.projects {
       }
     }
     .technology-icon {
-      width: 10%;
+      height: 3vmin;
+      margin-left: 5px;
+
+      @include mobile {
+        height: 5vmin;
+      }
     }
 
     &:hover {

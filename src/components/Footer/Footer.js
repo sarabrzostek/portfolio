@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Footer.scss";
 import { FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
+import cv from "../../assets/zarzeczny_maciej_cv_eng.pdf";
 
 function Footer() {
   return (
@@ -18,7 +19,9 @@ function Footer() {
         >
           <FaLinkedinIn className="link" data-for="link-tooltip" data-tip="Linkedin account" />
         </a>
-        <FaFile className="link" data-for="link-tooltip" data-tip="Download resume" />
+        <a href={cv} download>
+          <FaFile className="link" data-for="link-tooltip" data-tip="Download resume" />
+        </a>
 
         <ReactTooltip id="link-tooltip" place="top" effect="solid" />
       </section>

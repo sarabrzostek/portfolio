@@ -1,29 +1,44 @@
 import React from "react";
 
 import "./ProjectsPage.scss";
-import HtmlIcon from "../../assets/icons/html5_icon.svg";
-import GyminoImage from "../../assets/images/gymino_app.png";
+import JavascriptIcon from "../../assets/icons/javascript-1.svg";
+import ReactIcon from "../../assets/icons/react-brands.svg";
+import ReduxIcon from "../../assets/icons/redux_logo.svg";
+import FirebaseIcon from "../../assets/icons/firebase.svg";
+import FlutterIcon from "../../assets/icons/flutter.svg";
+import LaravelIcon from "../../assets/icons/laravel-brands.svg";
+import VueIcon from "../../assets/icons/vue.svg";
+import GyminoImage from "../../assets/images/gymino-app.png";
+import GyminoDashboardImage from "../../assets/images/gymino-dashboard.png";
+import SortingImage from "../../assets/images/sorting-visualizer.png";
+import ScudettoImage from "../../assets/images/scudetto.png";
 
 class ProjectsPage extends React.Component {
   state = {
     projects: [
       {
-        name: "Gymino",
-        icons: [HtmlIcon, HtmlIcon],
-        codeUrl: "https://github.com/maciekz1996/sqilly",
-        image: GyminoImage,
+        name: "Sorting visualizer",
+        icons: [JavascriptIcon, ReactIcon],
+        codeUrl: "https://github.com/maciekz1996/sorting-visualizer",
+        image: SortingImage,
       },
       {
         name: "Gymino dashboard",
-        icons: [HtmlIcon, HtmlIcon],
+        icons: [JavascriptIcon, ReactIcon, ReduxIcon, FirebaseIcon],
+        codeUrl: "https://github.com/maciekz1996/sqilly-web-app",
+        image: GyminoDashboardImage,
+      },
+      {
+        name: "Gymino mobile app",
+        icons: [FlutterIcon, FirebaseIcon],
         codeUrl: "https://github.com/maciekz1996/sqilly",
         image: GyminoImage,
       },
       {
-        name: "Scudetto",
-        icons: [HtmlIcon, HtmlIcon],
+        name: "Scudetto store",
+        icons: [LaravelIcon, VueIcon],
         codeUrl: "https://github.com/maciekz1996/sqilly",
-        image: GyminoImage,
+        image: ScudettoImage,
       },
     ],
   };
@@ -35,7 +50,7 @@ class ProjectsPage extends React.Component {
             src={icon}
             key={i}
             className="technology-icon"
-            alt="Technology used to create this project"
+            alt={"Technology used to create " + project.name}
           />
         );
       });
@@ -59,7 +74,7 @@ class ProjectsPage extends React.Component {
       <div className="projects-page" name="projects-section">
         <h1 className="title">Recent projects</h1>
         <section className="projects">{projects}</section>
-        {this.state.projects.length > 3 && <div className="button">See all</div>}
+        {/* {this.state.projects.length > 3 && <div className="button">See all</div>} */}
       </div>
     );
   }

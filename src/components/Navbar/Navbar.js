@@ -4,6 +4,7 @@ import "./Navbar.scss";
 import { Link } from "react-scroll";
 import { FaBars, FaTimesCircle, FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
 import Toggle from "../Toggle/Toggle";
+import cv from "../../assets/zarzeczny_maciej_cv_eng.pdf";
 
 class Navbar extends React.Component {
   state = {
@@ -108,7 +109,7 @@ class Navbar extends React.Component {
             </a>
           </li>
           <li>
-            <a href="#!">
+            <a href={cv} download>
               <FaFile />
             </a>
           </li>

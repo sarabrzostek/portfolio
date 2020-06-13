@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedinIn, FaFile } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
 import "./LandingPage.scss";
 import Navbar from "../Navbar/Navbar";
+import cv from "../../assets/zarzeczny_maciej_cv_eng.pdf";
 
 class LandingPage extends React.Component {
   render() {
@@ -376,7 +377,9 @@ class LandingPage extends React.Component {
           >
             <FaLinkedinIn className="link" data-for="link-tooltip" data-tip="Linkedin account" />
           </a>
-          <FaFile className="link" data-for="link-tooltip" data-tip="Download resume" />
+          <a href={cv} download>
+            <FaFile className="link" data-for="link-tooltip" data-tip="Download resume" />
+          </a>
 
           <ReactTooltip id="link-tooltip" place="top" effect="solid" />
         </section>
