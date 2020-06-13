@@ -25,13 +25,13 @@ class ProjectsPage extends React.Component {
       {
         name: "Gymino dashboard",
         icons: [JavascriptIcon, ReactIcon, ReduxIcon, FirebaseIcon],
-        codeUrl: "https://github.com/maciekz1996/sqilly-web-app",
+        codeUrl: "https://github.com/maciekz1996/gymino-dashboard",
         image: GyminoDashboardImage,
       },
       {
         name: "Gymino mobile app",
         icons: [FlutterIcon, FirebaseIcon],
-        codeUrl: "https://github.com/maciekz1996/sqilly",
+        codeUrl: "https://github.com/maciekz1996/gymino",
         image: GyminoImage,
       },
       {
