@@ -43,8 +43,9 @@
 #skills-illustration {
   grid-area: illustration;
   align-self: center;
-  width: 70%;
+  width: 25%;
   height: auto;
+  margin-left: 20%;
 
   #tick1 {
     opacity: 0;
@@ -162,11 +163,11 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin: 0 25% 5% 25%;
+      margin: 0 35% 5% 35%;
     }
 
     .skill-icon {
-      max-width: 15%;
+      max-width: 20%;
     }
 
     .skill-description {
@@ -213,7 +214,7 @@
 
 @include tablet {
   .skills-page {
-    background-image: url("../../assets/images/bg/mobile_skills_bg.svg");
+    background-image: url("../../assets/images/bg/bg-skills-mobile.svg");
     background-position: bottom left;
     -webkit-background-size: contain;
     -moz-background-size: contain;

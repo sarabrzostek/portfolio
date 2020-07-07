@@ -1,69 +1,47 @@
 import React from "react";
 
 import "./ProjectsPage.scss";
-import JavascriptIcon from "../../assets/icons/javascript-1.svg";
-import ReactIcon from "../../assets/icons/react-brands.svg";
-import ReduxIcon from "../../assets/icons/redux_logo.svg";
-import FirebaseIcon from "../../assets/icons/firebase.svg";
-import FlutterIcon from "../../assets/icons/flutter.svg";
-import LaravelIcon from "../../assets/icons/laravel-brands.svg";
-import VueIcon from "../../assets/icons/vue.svg";
-import GyminoImage from "../../assets/images/gymino-app.png";
-import GyminoDashboardImage from "../../assets/images/gymino-dashboard.png";
-import SortingImage from "../../assets/images/sorting-visualizer.png";
-import ScudettoImage from "../../assets/images/scudetto.png";
+
+import AppIcon from "../../assets/images/app.jpg";
+import VcIcon from "../../assets/images/vc.jpg";
+import OtherIcon from "../../assets/images/other.jpg";
+
+import AppWeb from "../../assets/downloads/app-web.zip";
+import Vc from "../../assets/downloads/vc.zip";
+import Other from "../../assets/downloads/other.zip";
+import All from "../../assets/downloads/all.zip";
 
 class ProjectsPage extends React.Component {
   state = {
     projects: [
       {
-        name: "Sorting visualizer",
-        icons: [JavascriptIcon, ReactIcon],
-        codeUrl: "https://github.com/maciekz1996/sorting-visualizer",
-        image: SortingImage,
+        name: "Websites and mobile apps",
+        downloadUrl: AppWeb,
+        image: AppIcon,
       },
       {
-        name: "Gymino dashboard",
-        icons: [JavascriptIcon, ReactIcon, ReduxIcon, FirebaseIcon],
-        codeUrl: "https://github.com/maciekz1996/gymino-dashboard",
-        image: GyminoDashboardImage,
+        name: "Visual communication",
+        downloadUrl: Vc,
+        image: VcIcon,
       },
       {
-        name: "Gymino mobile app",
-        icons: [FlutterIcon, FirebaseIcon],
-        codeUrl: "https://github.com/maciekz1996/gymino",
-        image: GyminoImage,
-      },
-      {
-        name: "Scudetto store",
-        icons: [LaravelIcon, VueIcon],
-        codeUrl: "https://github.com/maciekz1996/scudetto",
-        image: ScudettoImage,
+        name: "Other",
+        downloadUrl: Other,
+        image: OtherIcon,
       },
     ],
   };
   render() {
     const projects = this.state.projects.map((project, i) => {
-      const icons = project.icons.map((icon, i) => {
-        return (
-          <img
-            src={icon}
-            key={i}
-            className="technology-icon"
-            alt={"Technology used to create " + project.name}
-          />
-        );
-      });
       return (
         <div className="project-card" key={i}>
           <img src={project.image} className="project-image" alt={project.name} />
           <div className="details">
             <h2 className="project-name">{project.name}</h2>
-            {icons}
           </div>
           <div className="project-card-overflow">
-            <a href={project.codeUrl} className="button" target="_blank" rel="noopener noreferrer">
-              See details
+            <a href={project.downloadUrl} className="button" download>
+              Download
             </a>
           </div>
         </div>
@@ -72,9 +50,11 @@ class ProjectsPage extends React.Component {
 
     return (
       <div className="projects-page" name="projects-section">
-        <h1 className="title">Recent projects</h1>
+        <h1 className="title">Projects</h1>
         <section className="projects">{projects}</section>
-        {/* {this.state.projects.length > 3 && <div className="button">See all</div>} */}
+        <a href={All} download>
+          <div className="button">Download all</div>
+        </a>
       </div>
     );
   }

@@ -8,7 +8,7 @@ import cv from "../../assets/zarzeczny_maciej_cv_eng.pdf";
 function Footer() {
   return (
     <div className="footer">
-      <section className="links">
+      {/* <section className="links">
         <a href="https://github.com/maciekz1996" target="_blank" rel="noopener noreferrer">
           <FaGithub className="link" data-for="link-tooltip" data-tip="GitHub page" />
         </a>
@@ -24,9 +24,9 @@ function Footer() {
         </a>
 
         <ReactTooltip id="link-tooltip" place="top" effect="solid" />
-      </section>
+      </section> */}
 
-      <p>Maciej Zarzeczny 2020</p>
+      <p>Sara Brzostek 2020</p>
     </div>
   );
 }

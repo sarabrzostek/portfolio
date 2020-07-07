@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195.897" height="191" viewBox="0 0 195.897 191">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.329" cy="0.224" r="0.781" gradientTransform="translate(-0.01 0.01) scale(0.973 0.968)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4b2b36" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#250012"/>
+    </radialGradient>
+  </defs>
+  <g id="indesign" transform="translate(0 -130.746)">
+    <path id="Path_304" data-name="Path 304" d="M24.8,155.549H204.376V330.224H24.8Z" transform="translate(-16.641 -16.641)" fill="url(#radial-gradient)"/>
+    <path id="Path_305" data-name="Path 305" d="M8.162,138.908H187.735V313.583H8.162ZM0,321.746H195.9v-191H0ZM123.905,210.084a11.618,11.618,0,0,0-4.816-.816c-10.529,0-17.876,8.081-17.876,21.549,0,15.345,7.509,21.548,16.9,21.548a14.665,14.665,0,0,0,5.8-.979Zm-4.326-13.3a37.611,37.611,0,0,1,4.326.163V175.231a.769.769,0,0,1,.816-.816h13.223c.653,0,.816.245.816.653v76.319a61.557,61.557,0,0,0,.408,8.244c0,.571-.163.653-.735.98a49.9,49.9,0,0,1-21.385,4.816c-18.039,0-30.936-11.182-30.936-33.956-.081-19.508,12.815-34.69,33.466-34.69ZM71.666,263.14c0,.816-.163,1.061-1.061,1.061H58.035c-.816,0-1.061-.408-1.061-1.061V175.476c0-.816.408-1.061,1.061-1.061H70.686c.653,0,.98.245.98.98Z" fill="#ff408c"/>
+  </g>
+</svg>

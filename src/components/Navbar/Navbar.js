@@ -94,25 +94,6 @@ class Navbar extends React.Component {
               CONTACT
             </Link>
           </li>
-          <li>
-            <a href="https://github.com/maciekz1996" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/maciej-zarzeczny-03636918b/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn />
-            </a>
-          </li>
-          <li>
-            <a href={cv} download>
-              <FaFile />
-            </a>
-          </li>
         </ul>
       </nav>
     );
